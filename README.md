@@ -5,15 +5,16 @@ Compute top N most frequent visitors and urls by day from downloaded file
 2. Navigate to root directory of cloned repo
 3. Build docker file
 
-  `docker build -t scala-exercise:latest .`
+  ```docker build -t scala-exercise:latest .```
+
 4. Run spark application within docker image
 
   The following command displays the top-5 frequent data
 
   ```docker run -ti scala-exercise:latest spark-submit /scala_exercise/jars/spark_exercise.jar ftp://ita.ee.lbl.gov/traces/NASA_access_log_Jul95.gz 5```
 
-##### Package: `sbt clean assembly`
-##### Test Case Execution: `sbt test`
+##### Package: ```sbt clean assembly```
+##### Test Case Execution: ```sbt test```
 
 ### Sample Result
 
