@@ -57,6 +57,6 @@ only showing top 20 rows
 ```
 
 Do the following step to compile the spark application while building the docker image\
-  &nbsp;&nbsp;&nbsp;** Add '#' to beginning of line 39 to comment it\
-  &nbsp;&nbsp;&nbsp;** Remove '#' from beginning of line 42 to uncomment it\
-  &nbsp;&nbsp;&nbsp;** Perform steps 3 and 4 from instructions section\
+  &nbsp;&nbsp;&nbsp;1. Add '#' to beginning of line 39 to comment it\
+  &nbsp;&nbsp;&nbsp;2. Remove '#' from beginning of line 42 to uncomment it\
+  &nbsp;&nbsp;&nbsp;3. Perform steps 3 and 4 from instructions section
