@@ -26,13 +26,17 @@ RUN tar -xzf /spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz && \
 #Set environment variable
 ENV PATH="/spark/bin:${PATH}"
 
+#Download sbt binaries
+RUN wget --no-verbose -O - https://github.com/sbt/sbt/releases/download/v$SBT_VERSION/sbt-$SBT_VERSION.tgz | gunzip | tar -x -C /usr/local
+ENV PATH /usr/local/sbt/bin:${PATH}
+
 WORKDIR /scala_exercise
 RUN mkdir -p /scala_exercise/data
 
 ADD src/. /scala_exercise/src/
 ADD build.sbt /scala_exercise/
 ADD project/. /scala_exercise/project/
-ADD target/scala-2.11/spark_exercise.jar /scala_exercise/jars/
+ADD target/. /scala_exercise/target/.
 
-#Run jar compilation
-#RUN sbt clean assembly
+#Run jar compilation and skip test
+#RUN sbt 'set test in assembly := {}' clean assembly
